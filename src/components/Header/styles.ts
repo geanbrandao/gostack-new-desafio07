@@ -22,9 +22,21 @@ export const Container = styled.div<ContainerProps>`
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
+        &:first-child {
+          border-style: ${({ size }) =>
+            size === 'large' ? 'none none solid none' : 'none'};
+          border-color: ${({ size }) => (size === 'large' ? '#FF872C' : '')};
+          border-width: ${({ size }) => (size === 'large' ? '2px' : '0')};
+          padding-bottom: ${({ size }) => (size === 'large' ? '10px' : '0')};
+        }
 
         & + a {
           margin-left: 32px;
+          border-style: ${({ size }) =>
+            size === 'small' ? 'none none solid none' : 'none'};
+          border-color: ${({ size }) => (size === 'small' ? '#FF872C' : '')};
+          border-width: ${({ size }) => (size === 'small' ? '2px' : '0')};
+          padding-bottom: ${({ size }) => (size === 'small' ? '10px' : '0')};
         }
 
         &:hover {
